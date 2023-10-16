@@ -1,0 +1,16 @@
+.body {
+    font-family: $main-font;
+    background-color: $primary-white-color;
+    color: $primary-text-color;
+    margin: 0;
+
+    @media screen and (min-width: 320px) {
+        overflow-x: hidden;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

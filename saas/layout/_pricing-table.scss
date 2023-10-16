@@ -1,0 +1,76 @@
+table {
+    border-collapse: collapse;
+}
+
+.pricing-table-title {
+    background-color: $accent-color;
+    color: $primary-white-color;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 100px;
+    text-align: center;
+}
+
+.pricing-table {
+    margin: 10px auto;
+}
+
+.pricing-table-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.pricing-table-item:hover {
+    background-color: $accent-color;
+    color: $primary-white-color;
+}
+
+.plan-list {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.plan-name {
+    margin-bottom: 20px;
+}
+
+.plan-period {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.plan-period-value {
+    cursor: pointer;
+}
+
+// .plan-period-value:hover {
+//     text-decoration: underline;
+// }
+
+// .month {
+//     text-decoration: underline;
+// }
+
+.plan-price {
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+tr td {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid $primary-text-color;
+}
+
+.pr:hover .premium {
+    background-color: $bgc-1;
+}
+
+.accent {
+    color: $accent-color;
+}
+
+.selected {
+    text-decoration: underline;
+}

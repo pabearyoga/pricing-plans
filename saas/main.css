@@ -1,0 +1,96 @@
+.body {
+  font-family: Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #2f303a;
+  margin: 0;
+}
+@media screen and (min-width: 320px) {
+  .body {
+    overflow-x: hidden;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.pricing-table-title {
+  background-color: #ed4749;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 100px;
+  text-align: center;
+}
+
+.pricing-table {
+  margin: 10px auto;
+}
+
+.pricing-table-item {
+  padding: 20px;
+  text-align: center;
+}
+
+.pricing-table-item:hover {
+  background-color: #ed4749;
+  color: #ffffff;
+}
+
+.plan-list {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.plan-name {
+  margin-bottom: 20px;
+}
+
+.plan-period {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.plan-period-value {
+  cursor: pointer;
+}
+
+.plan-price {
+  font-weight: 800;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+tr td {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #2f303a;
+}
+
+.pr:hover .premium {
+  background-color: #757575;
+}
+
+.accent {
+  color: #ed4749;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+.btn {
+  border: 1px solid #ffffff;
+  outline: none;
+  background-color: #ed4749;
+  color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
