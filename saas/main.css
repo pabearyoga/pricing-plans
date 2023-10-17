@@ -1,8 +1,8 @@
 .body {
-  font-family: Roboto, sans-serif;
-  background-color: #ffffff;
-  color: #2f303a;
   margin: 0;
+  font-family: Roboto, sans-serif;
+  color: #2f303a;
+  background-color: #ffffff;
 }
 @media screen and (min-width: 320px) {
   .body {
@@ -11,35 +11,61 @@
 }
 
 ul {
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 table {
   border-collapse: collapse;
 }
 
-.pricing-table-title {
-  background-color: #ed4749;
-  color: #ffffff;
-  text-transform: uppercase;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 100px;
+  color: #ffffff;
   text-align: center;
+  text-transform: uppercase;
+  background-color: #ed4749;
+}
+@media screen and (max-width: 520px) {
+  .title {
+    flex-direction: column;
+  }
 }
 
 .pricing-table {
   margin: 10px auto;
+}
+@media screen and (max-width: 520px) {
+  .pricing-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .pricing-table-header {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .pricing-table-item {
   padding: 20px;
   text-align: center;
 }
-
 .pricing-table-item:hover {
+  color: #ffffff;
   background-color: #ed4749;
+}
+
+.pricing-table-item:hover .plan-name::first-letter {
   color: #ffffff;
 }
 
@@ -51,14 +77,27 @@ table {
 .plan-name {
   margin-bottom: 20px;
 }
+@media screen and (max-width: 520px) {
+  .plan-name::first-letter {
+    color: #ed4749;
+  }
+}
 
 .plan-period {
-  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
   margin-bottom: 5px;
+  font-size: 12px;
 }
 
 .plan-period-value {
+  display: block;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+.plan-period-value:hover {
+  transform: scale(1.2);
 }
 
 .plan-price {
@@ -67,30 +106,51 @@ table {
   margin-bottom: 10px;
 }
 
-tr td {
-  text-align: center;
-  padding: 20px;
-  border: 1px solid #2f303a;
+.pricing-table-feature:hover {
+  background-color: #f5f4fa;
 }
 
-.pr:hover .premium {
-  background-color: #757575;
+.pricing-table-feature td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #2f303a;
 }
 
 .accent {
   color: #ed4749;
 }
 
+.accent-bg {
+  color: #ffffff;
+  background-color: #ed4749;
+}
+
 .selected {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 520px) {
+  .hide {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .show {
+    display: none;
+  }
+}
+
 .btn {
-  border: 1px solid #ffffff;
-  outline: none;
-  background-color: #ed4749;
-  color: #ffffff;
   width: 100%;
   padding: 10px;
+  color: #ffffff;
+  background-color: #ed4749;
+  border: 1px solid #ffffff;
+  outline: none;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+.btn:hover {
+  transform: scale(1.1);
 }

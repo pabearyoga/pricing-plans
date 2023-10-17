@@ -2,26 +2,51 @@ table {
     border-collapse: collapse;
 }
 
-.pricing-table-title {
-    background-color: $accent-color;
-    color: $primary-white-color;
-    text-transform: uppercase;
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 100px;
+    color: $primary-white-color;
     text-align: center;
+    text-transform: uppercase;
+    background-color: $accent-color;
+
+    @media screen and (max-width: $tablet) {
+        flex-direction: column;
+    }
 }
 
 .pricing-table {
     margin: 10px auto;
+
+    @media screen and (max-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.pricing-table-header {
+    @media screen and (max-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .pricing-table-item {
     padding: 20px;
     text-align: center;
+
+    &:hover {
+        color: $primary-white-color;
+        background-color: $accent-color;
+    }
 }
 
-.pricing-table-item:hover {
-    background-color: $accent-color;
+.pricing-table-item:hover .plan-name::first-letter {
     color: $primary-white-color;
 }
 
@@ -32,24 +57,31 @@ table {
 
 .plan-name {
     margin-bottom: 20px;
+
+    &::first-letter {
+        @media screen and (max-width: $tablet) {
+            color: $accent-color;
+        }
+    }
 }
 
 .plan-period {
-    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
     margin-bottom: 5px;
+    font-size: 12px;
 }
 
 .plan-period-value {
+    display: block;
     cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
-
-// .plan-period-value:hover {
-//     text-decoration: underline;
-// }
-
-// .month {
-//     text-decoration: underline;
-// }
 
 .plan-price {
     font-weight: 800;
@@ -57,20 +89,39 @@ table {
     margin-bottom: 10px;
 }
 
-tr td {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid $primary-text-color;
+.pricing-table-feature {
+    &:hover {
+        background-color: $bgc-1;
+    }
 }
 
-.pr:hover .premium {
-    background-color: $bgc-1;
+.pricing-table-feature td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid $primary-text-color;
 }
 
 .accent {
     color: $accent-color;
 }
 
+.accent-bg {
+    color: $primary-white-color;
+    background-color: $accent-color;
+}
+
 .selected {
     text-decoration: underline;
+}
+
+.hide {
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.show {
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
 }
