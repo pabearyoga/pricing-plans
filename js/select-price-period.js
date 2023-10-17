@@ -3,26 +3,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функція для оновлення цін на основі вибраної опції
   function updatePrices(selectedOption, selectPlanId, selectPriceElement) {
-    planItems.forEach((item) => {
-      // Отримуємо ID плану
-      const planId = selectPlanId;
-
-      // Оновлюємо ціни відповідно до вибору
-      const priceElement = selectPriceElement;
-      //   console.log(priceElement);
-
-      if (planId === "basic") {
-        priceElement.textContent =
+    planItems.forEach(() => {
+      if (selectPlanId === "basic") {
+        selectPriceElement.textContent =
           selectedOption === "month" ? "$9.99" : "$99.99";
-      } else if (planId === "standard") {
-        priceElement.textContent =
+      } else if (selectPlanId === "standard") {
+        selectPriceElement.textContent =
           selectedOption === "month" ? "$19.99" : "$199.99";
-      } else if (planId === "premium") {
-        priceElement.textContent =
+      } else if (selectPlanId === "premium") {
+        selectPriceElement.textContent =
           selectedOption === "month" ? "$29.99" : "$299.99";
       }
     });
   }
+
+  // Функція для виводу даних для "Sign Up"
+  const signUp = (selectedOption, selectPlanId, selectPriceElement) => {
+    alert(
+      `${selectPlanId}, ${selectPriceElement.textContent}/${selectedOption}`
+    );
+  };
 
   // Додаємо обробник подій до кожного плану
   planItems.forEach((item) => {
@@ -48,6 +48,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Оновлюємо ціни
       updatePrices(selectedOption, selectPlanId, selectPriceElement);
+
+      // Отрибуємо дані для "Sign Up"
+      const btn = item.querySelector(".btn");
+
+      if (e.target.nodeName === "BUTTON") {
+        btn.addEventListener(
+          "click",
+          signUp(selectedOption, selectPlanId, selectPriceElement)
+        );
+      } else return;
     });
   });
 });
