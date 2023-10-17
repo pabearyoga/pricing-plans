@@ -2,20 +2,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const planItems = document.querySelectorAll(".plan-list");
 
   // Функція для оновлення цін на основі вибраної опції
-  function updatePrices(selectedOption, selectPlanId, selectPriceElement) {
+  const updatePrices = (selectedOption, selectPlanId, selectPriceElement) => {
     planItems.forEach(() => {
-      if (selectPlanId === "basic") {
-        selectPriceElement.textContent =
-          selectedOption === "month" ? "$9.99" : "$99.99";
-      } else if (selectPlanId === "standard") {
-        selectPriceElement.textContent =
-          selectedOption === "month" ? "$19.99" : "$199.99";
-      } else if (selectPlanId === "premium") {
-        selectPriceElement.textContent =
-          selectedOption === "month" ? "$29.99" : "$299.99";
+      switch (selectPlanId) {
+        case "basic":
+          selectPriceElement.textContent =
+            selectedOption === "month" ? "$9.99" : "$99.99";
+          break;
+        case "standard":
+          selectPriceElement.textContent =
+            selectedOption === "month" ? "$19.99" : "$199.99";
+          break;
+        case "premium":
+          selectPriceElement.textContent =
+            selectedOption === "month" ? "$29.99" : "$299.99";
+          break;
+        default:
+          break;
       }
     });
-  }
+  };
 
   // Функція для виводу даних для "Sign Up"
   const signUp = (selectedOption, selectPlanId, selectPriceElement) => {
